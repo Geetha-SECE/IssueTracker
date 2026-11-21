@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issue Tracker</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Issue Tracker</h1>
+      <p>Track issues per project</p>
+    </header>
+
+    <section class="card">
+      <label for="project">Project name</label>
+      <input type="text" id="project" value="test" placeholder="e.g. my-project" />
+      <button id="loadProject">Load Project</button>
+    </section>
+
+    <section class="card" id="projectSection" style="display: none;">
+      <h2>Issues for <span id="projectName"></span></h2>
+
+      <div class="filters">
+        <input type="text" id="filterField" placeholder="filter field" />
+        <input type="text" id="filterValue" placeholder="filter value" />
+        <button id="applyFilter">Filter</button>
+        <button id="clearFilter">Clear</button>
+      </div>
+
+      <form id="issueForm">
+        <h3>New Issue</h3>
+        <div class="form-row">
+          <input type="text" id="i_title" placeholder="Issue title *" required />
+          <input type="text" id="i_text" placeholder="Issue text *" required />
+        </div>
+        <div class="form-row">
+          <input type="text" id="i_created_by" placeholder="Created by *" required />
+          <input type="text" id="i_assigned_to" placeholder="Assigned to" />
+        </div>
+        <div class="form-row">
+          <input type="text" id="i_status_text" placeholder="Status text" />
+          <button type="submit">Create Issue</button>
+        </div>
+      </form>
+
+      <div id="issuesList"></div>
+    </section>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
